@@ -4,10 +4,6 @@
     font-weight: 400;    
 }
 
-.container {
-    margin-left: 50px !important;
-}
-
 .topnav {
     overflow: hidden;
 }
@@ -88,6 +84,31 @@
 .responsive {
     max-width: 100%;
     height: auto;
+}
+
+
+/* */
+#cv_page {
+    display: none;
+    font-size: 14px;
+}
+#cv_page table th{
+    padding: 5px 5px;
+    font-size: 14px;
+}
+#cv_page table td{
+    padding: 5px 5px;
+}
+
+/* */
+#portfolio_page {
+    display: none;
+}
+
+
+/* */
+#contact_page {
+    display: none;
 }
 
 
