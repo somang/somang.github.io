@@ -6,9 +6,6 @@
 
 .topnav {
     overflow: hidden;
-}
-
-.topnav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -104,8 +101,6 @@
 #portfolio_page {
     display: none;
 }
-
-
 /* */
 #contact_page {
     display: none;
