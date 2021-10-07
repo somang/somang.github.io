@@ -1,7 +1,6 @@
-
 * {
     font-family: 'Quicksand', sans-serif;
-    font-weight: 400;    
+    font-weight: 400;
 }
 
 .topnav {
@@ -34,7 +33,8 @@
 }
 
 #menuicon {
-    width:30px; /* you can use % */
+    width: 30px;
+    /* you can use % */
     height: auto;
 }
 
@@ -49,7 +49,9 @@
 }
 
 @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
+    .topnav.responsive {
+        position: relative;
+    }
     .topnav.responsive .icon {
         position: absolute;
         right: 0;
@@ -62,18 +64,23 @@
     }
 }
 
+
 /* */
-#home{
+
+#home {
     padding-top: 50px;
 }
+
 #home a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 15px;
-    color: #818181;        
+    color: #818181;
 }
 
+
 /* */
+
 #content {
     padding-top: 20px;
 }
@@ -85,25 +92,39 @@
 
 
 /* */
+
+#about_page {
+    display: none;
+    font-size: 14px;
+}
+
+
+/* */
+
 #cv_page {
     display: none;
     font-size: 14px;
 }
-#cv_page table th{
+
+#cv_page table th {
     padding: 5px 5px;
     font-size: 14px;
 }
-#cv_page table td{
+
+#cv_page table td {
     padding: 5px 5px;
 }
 
+
 /* */
+
 #portfolio_page {
     display: none;
 }
+
+
 /* */
+
 #contact_page {
     display: none;
 }
-
-
