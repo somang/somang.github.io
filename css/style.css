@@ -1,5 +1,6 @@
 * {
-    font-family: 'Quicksand', sans-serif;
+    font-family: Verdana, sans-serif;
+    font-family: 'Quicksand', sans-serif;    
     font-weight: 400;
 }
 
@@ -30,6 +31,10 @@
 .topnav .icon {
     font-size: 20px;
     display: none;
+}
+
+footer {
+    height: 0;
 }
 
 #menuicon {
@@ -120,6 +125,13 @@
 
 #portfolio_page {
     display: none;
+}
+.activate_portfolio_page {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
 }
 
 
