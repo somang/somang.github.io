@@ -35,6 +35,7 @@
 
 footer {
     height: 0;
+    bottom: 0px;
 }
 
 #menuicon {
@@ -74,6 +75,7 @@ footer {
 
 #home {
     padding-top: 50px;
+    margin-bottom: 5%;
 }
 
 #home a {
@@ -139,4 +141,19 @@ footer {
 
 #contact_page {
     display: none;
+}
+
+
+.sidenav {
+    height: 100%;
+    width: 10%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.sidenav a {
+    padding: 8px;
+    font-size: 24px;
+    display: block;
 }
