@@ -1,0 +1,71 @@
+body, html { padding:0; margin:0; width:100%; min-height:100%; background-color:#ffffff; }
+body { 
+    
+    
+    font-family: 'ubuntu_condensedregular', Helvetica, Arial, sans-serif; font-size:12pt; line-height:1.5em; color: #525e67;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+  }
+
+a { text-decoration:none; color:#0cbcf7; }
+a:hover { color:#2c3841; }
+
+
+p { 
+    font-family: Arial, sans-serif; 
+    color:#525e67;
+    font-size: 16px;}
+h2 {
+    display: block;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    font-size: 20px;
+    color: #2c3841;
+    font-weight: normal;
+}
+
+.mobileonly { display:none !important; }
+
+.page{
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.title {
+    position: relative;
+    font-size: 16pt;
+    margin-left: 20px;
+}
+
+.stub p {
+    text-indent: 20px;
+    color: #525e67;
+}
+.stub .tags {
+    display: block;
+    position: relative;
+    list-style: none;
+    overflow: hidden;    
+}
+
+.stub .tags li {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.stub .tags li span {
+    display: block;
+    background-color: #e4e9ec;
+    color: #2c3841;
+    text-transform: none;
+    font-size: 0.9em;
+    padding: 5px;
+    overflow: hidden;
+}
