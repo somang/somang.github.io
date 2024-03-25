@@ -107,6 +107,9 @@
                     const rows = text.split('\n').map(row => row.split(','));
                     const headers = rows.shift(); // Remove the first row and use it as headers
                     const emailIndex = headers.findIndex(header => header.trim().toLowerCase() === 'email');
+                    console.log(headers);
+                    console.log(emailIndex);
+
                     if (emailIndex === -1) {
                         resultDiv.textContent = 'Email column not found.';
                         return;
