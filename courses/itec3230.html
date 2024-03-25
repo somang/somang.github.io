@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        table {
+            margin-top: 20px;
+            border-collapse: collapse;
+            width: 60%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"],
+        button {
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>ITEC3230 Nano Quiz Grades</h2>
+    <input type="text" id="emailInput" placeholder="Enter email to search">
+    <button id="searchButton">Search</button>
+    <div id="tableContainer"></div>
+
+    <script>
+        function displayArrayAsTable(headers, dataArray) {
+            const tableContainer = document.getElementById('tableContainer');
+
+            // Create table element
+            const table = document.createElement('table');
+
+            // Populate the table with data array
+            dataArray.forEach((item, index) => {
+                const row = table.insertRow();
+                const cellIndex = row.insertCell();
+                const cellValue = row.insertCell();
+
+                cellIndex.textContent = headers[index];
+                cellValue.textContent = item;
+            });
+
+            // Append the table to the container
+            tableContainer.appendChild(table);
+        }
+        document.getElementById('searchButton').addEventListener('click', function () {
+            const emailToSearch = document.getElementById('emailInput').value.trim().toLowerCase();
+            const resultDiv = document.getElementById('result');
+            // Hide the search button and input box
+            emailInput.style.display = 'none';
+            searchButton.style.display = 'none';
+
+            if (!emailToSearch) {
+                resultDiv.textContent = 'Please enter an email address to search for.';
+                return;
+            }
+            fetch('/courses/data.csv')
+                .then(response => response.text())
+                .then(text => {
+                    const rows = text.split('\n').map(row => row.split(','));
+                    const headers = rows.shift(); // Remove the first row and use it as headers
+                    const emailIndex = headers.findIndex(header => header.trim().toLowerCase() === 'email');
+                    if (emailIndex === -1) {
+                        resultDiv.textContent = 'Email column not found.';
+                        return;
+                    } else {
+                        const matchedRow = rows.find(row => row[emailIndex].trim().toLowerCase() === emailToSearch);
+
+                        if (matchedRow) {
+                            displayArrayAsTable(headers, matchedRow);
+                        } else {
+                            resultDiv.textContent = 'No matching email found.';
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching the CSV file:', error);
+                    resultDiv.textContent = 'An error occurred while fetching the CSV file.';
+                });
+        });
+
+    </script>
+</body>
+
+</html>
