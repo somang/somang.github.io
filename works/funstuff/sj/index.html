@@ -1,14 +1,46 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-us" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | SpaceJam</title>
+    <title>Somang Nam, 2017</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">
   </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
+  <body class="container">
+    <nav>
+      <ul>
+        <li><strong>Somang Nam</strong></li>
+      </ul>
+      <ul>
+        <li>              
+          <a href="/" id="home">Take me back home</a>
+        </li>
+        <li>
+          <details class="dropdown">
+            <summary>
+              Check out my other stuff
+            </summary>
+            <ul dir="rtl">
+              <li><a href="/works/funstuff/eatitout_demo/index.html" target="_blank"  rel="noopener noreferrer">2018, Game, eat-it-out</a></li>
+              <li><a href="/works/funstuff/sj/index.html" target="_blank"  rel="noopener noreferrer">2017, Game, SpaceJam</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="row">
+      <h1>2017, Educational game for kids</h1>
+      <p>
+        In 2017, a game design project was done to participate the Canada Aviation and Space Museum for children's space nutrition education.
+        The user centred design approach was taken from the beginning of the project.
+      </p>
+    </div>
+    <div id="unity-container" class="unity-desktop" style="">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
