@@ -15,12 +15,12 @@
       </ul>
       <ul>
         <li>              
-          <a href="/" id="home">Take me back home</a>
+          <a href="/" id="home">Home</a>
         </li>
         <li>
           <details class="dropdown">
             <summary>
-              Check out my other UX stuff
+              Check out my other studies
             </summary>
             <ul dir="rtl">
               <li><a href="/works/uxresearch/nerweb_2024.html" target="_blank"  rel="noopener noreferrer">2024, UX, NERWEB</a></li>
@@ -37,30 +37,40 @@
           The Canadian Radio-television and Telecommunications Commission (CRTC) regulates the quality of Closed Captioning (<a href="https://crtc.gc.ca/eng/info_sht/b321.htm">link</a>), which uses a specific model to assess. 
           The assessment requires certified evaluators to compare the televised captions with the transcript and generate a quality report for the broadcasters to audit the quality.
           In this project, a software tool was designed using the User Centre Design principles. 
-          It iterated two cycles of user research, including the System Usability Scale (SUS) and user studies with initial user interface design and an Alpha prototype.
+          It iterated two cycles of user research, including the System Usability Scale (<a href="https://en.wikipedia.org/wiki/System_usability_scale">SUS</a>) and user studies with initial user interface design and an Alpha prototype.
         </p>
         <p>
-          Total duration: 11 months
+          Total duration: <kbd>11 months</kbd>
+        </p>
+        <p>
+          As a <mark>Product Manager</mark>, I designed the <kbd>user research</kbd>, <kbd>interviews</kbd>, <kbd>questionnaires</kbd>, led and directed the <kbd>interface design</kbd>.
+          In addition, I communicated the change from the design cycles along with the developers for lean and agile development.
         </p>
         <article id="article">
           <h2>1. Requirement gathering</h2>
           <p>
-            From the initial stage, three objectives were focused on developing a primitive interface.
+            From the initial stage, two objectives were focused on in order to develope a dedicated user interface.
             <ol>
                 <li>Task requirements</li>
-                <li>Desired workflow</li>
-                <li>Need, Want, and Wish lists</li>
+                <li>Need, Want, and Wish lists (Desired workflow)</li>
             </ol>
-          Starting from the baseline knowledge, the fact that the <a href="https://nercanada.ca/">Canadian NER model</a> process was studied to learn the desired workflow. Then two experts were contacted for the initial interview.
-          The experts did not want to participate in the actual interview process, however, gave a list of pain points that they wanted to solve from the current tool and process.
-          In addition, it was possible to acquire the existing tool that users were using (e.g., an Excel VBA script).
-          With these, initial task requirement lists were created.
+          Starting from the baseline knowledge, the fact that the <a href="https://nercanada.ca/">Canadian NER model</a> process was studied to learn the required tasks.
+          Two domain experts were interviewed and generated a list of pain points from the current tools and processes.
+          In addition, it was possible to acquire the existing tool that users were using. With these, initial requirements list was created.
           </p>
+          
           <blockquote>
+              <div style="text-align: center;">
+                <img src="img/nerold_1.png">
+                </div>
+            <figcaption><i>Figure 1.</i> Old interface using VBA. It does not have intuitive controls and cluttered elements as the software is not dedicated for the task.</figcaption>
+          </blockquote>
+          <blockquote>
+
             <div style="text-align: center;">
             <img src="img/nerweb1.png" width="1588" height="762">
             </div>
-            <figcaption>Fig 1. User requirements. Note that the diagram is not in the traditional format as it was to communicate with the software developers.</figcaption>
+            <figcaption><i>Figure 2.</i> User requirements done in FigJam. Note that the diagram is not in the traditional format as it was to communicate with the software developers.</figcaption>
           </blockquote>
         </article>
         <article id="article">
@@ -74,13 +84,13 @@
           <div style="text-align: center;">
             <img src="img/nerweb_v1.png" width="1171" height="859">
           </div>
-          <figcaption>Fig 2. Low fidelity wireframe v1</figcaption>
+          <figcaption><i>Figure 3.</i> Low fidelity wireframe v1</figcaption>
           </blockquote>
           <blockquote>
           <div style="text-align: center;">
             <img src="img/nerweb_v2.png" width="942" height="697">
           </div>
-          <figcaption>Fig 3. Low fidelity wireframe v2</figcaption>
+          <figcaption><i>Figure 4.</i> Low fidelity wireframe v2</figcaption>
           </blockquote>
       <h3>High fidelity prototype</h3>
       <p>
@@ -93,7 +103,7 @@
         <div style="text-align: center;">
           <img src="img/nerweb_v3.png" width="850" height="624">
         </div>
-        <figcaption>Fig 4. High fidelity prototype</figcaption>
+        <figcaption><i>Figure 5.</i> High fidelity prototype</figcaption>
       </blockquote>
       <p>
           In order to communicate with the stakeholders, a user journey of the desired system was also presented.
@@ -102,7 +112,7 @@
         <div style="text-align: center;">
           <img src="img/nerweb_userjourney.png" width="1826" height="621">
         </div>
-        <figcaption>Fig 5. User journey</figcaption>
+        <figcaption><i>Figure 6.</i> User journey</figcaption>
       </blockquote>
       
       </article>
@@ -124,22 +134,22 @@
           <div style="text-align: center;">
             <img src="img/code_2.png" width="526" height="855">
           </div>
-          <figcaption>Fig 6. Coded qualitative data</figcaption>
+          <figcaption><i>Figure 7.</i> Coded qualitative data</figcaption>
         </blockquote>
         <blockquote>
           <div style="text-align: center;"></div>
             <img src="img/codes_1.png" width="933" height="691">
           </div>
-          <figcaption>Fig 7. Codes found from interview data</figcaption>
+          <figcaption><i>Figure 8.</i> Codes found from interview data</figcaption>
         </blockquote>
           
   </article>
       <article id="article">
-        <h2>4. Design recommendations and after...</h2>
+        <h2>4. Design recommendations, second iteration of the user research, and after...</h2>
         <p>
           From the first round of user studies, a set of design recommendations was found from <a href="https://en.wikipedia.org/wiki/Thematic_analysis">thematic analysis</a>.
           These design recommendations were then presented and discussed with the software development team, followed by an interface update on the tool.
-          Upon implementation, a second round of user study was performed with the same five expert users.
+          Upon implementation, a <mark>second round of user study was performed with the same five expert users.</mark>
           The second study was designed in the following order:
           <ol>
               <li>User tasks (think aloud protocol) with semi-structured interview questions</li>
@@ -148,29 +158,32 @@
           The final version specifically asked about the user experience in seeing AI-generated quality assessment to be used as a decision support tool in quality assessment.
           The user reaction towards the AI system was positive, which was also highlighted in their reaction to how it was presented at the end of their own evaluation.
         </p>
+        <p>
+        The SUS score comparison showed that there was improved usability from the conventional interface to the NERWEB interface, which was already proven by participants' reactions in the interview.
+        A non-parametric statistical analysis for with-in group repeated measures (<a href="https://en.wikipedia.org/wiki/Friedman_test">The Friedman test</a>) was performed for comparing the two sets of SUS scores.
+        </p>
         <blockquote>
           <div style="text-align: center;">
             <img src="img/nerweb_v4.png" width="1072" height="752">
           </div>
-          <figcaption>Fig 8. NERWEB final interface</figcaption>
+          <figcaption><i>Figure 9.</i> NERWEB final interface</figcaption>
         </blockquote>
         <blockquote>
           <div style="text-align: center;">
             <img src="img/nerweb_final_cais.png" width="931" height="675">
           </div>
-          <figcaption>Fig 9. Final report screen with CAIS prediction scores</figcaption>
+          <figcaption><i>Figure 10.</i> Final report screen with CAIS prediction scores</figcaption>
         </blockquote>
     </article>
     <article id="article">
       <h2>Finally</h2>
-        The SUS score comparison showed that there was improved usability from the conventional interface to the NERWEB interface, which was already proven by participants' reactions in the interview.
-        Advanced data analytics were performed for the publication planned in Fall, 2024.
       <footer>
-          <small>This work was completed and all user research process is described in detail for academic publication manuscripts.
+          <small>The first part of this work was described in detail for academic publication manuscript.
             <ul>
               <li>Nam, S., Tanvir, R., (2024). NERWEB: User-friendly Software for Caption Quality Assessment Using the NER Model, Computers Helping People with Special Needs, ICCHP 2024, Linz, Austria, 2024, Proceedings. Springer.</li>
             </ul>
-            </small>
+            The detailed report is being prepared to be submitted to a peer-reviewed journal.
+          </small>
         </footer>
       </article>
     </article>
