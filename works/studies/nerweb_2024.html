@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Somang Nam, 2024</title>
-    
+    <title>Somang Nam, 2024</title>    
     <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="../../css/style.css">
   </head>
   <body class="container">
     <nav>
@@ -36,19 +36,19 @@
     <article id="article" style="max-width: 950px; margin: 0 auto;">
         <h1>2024, Designing a user interface for caption quality evaluation tool</h1>
         <p>
-          The Canadian Radio-television and Telecommunications Commission (CRTC) regulates the quality of Closed Captioning (<a href="https://crtc.gc.ca/eng/info_sht/b321.htm">link</a>), which uses a specific model to assess. 
-          The assessment requires certified evaluators to compare the televised captions with the transcript and generate a quality report for the broadcasters to audit the quality.
-          <ins>A software tool was designed and developed from zero to one using the User Centre Design principles in this project.</ins>
-          It iterated two cycles of user research, including the System Usability Scale (<a href="https://en.wikipedia.org/wiki/System_usability_scale">SUS</a>) and user studies with initial user interface design and an Alpha prototype.
+          The Canadian Radio-television and Telecommunications Commission (CRTC) regulates the quality of Closed Captioning (<a href="https://crtc.gc.ca/eng/info_sht/b321.htm">link</a>), 
+          which is assessed using a specific model. 
+          Expert users faced significant barriers and inefficiencies due to the lack of dedicated software and interface for evaluating televised captions.
+          To address this problem, a software tool was designed and developed from scratch using User-Centered Design principles.
+          This project involved two cycles of user research, including the System Usability Scale (<a href="https://en.wikipedia.org/wiki/System_usability_scale">SUS</a>) and user studies, 
+          which informed the initial user interface design and an Alpha prototype.
+          The tool enables certified evaluators to compare televised captions with transcripts, generating quality reports for broadcasters to audit caption quality.
         </p>
         <p>
           <b>Duration:</b> 11 months
         </p>
         <p>
-          <b>Problem to solve:</b> Expert users did not have a dedicated software and interface, leading to barriers and inefficient workflow.
-        </p>
-        <p>
-          As a <mark>Product Manager / Lead Researcher </mark>, I designed the <kbd>UX research</kbd>, <kbd>interviews</kbd>, <kbd>questionnaires</kbd>, led and directed the <kbd>interface design</kbd>.
+          As a <mark>Product Manager / Lead Researcher </mark>, I designed the UX research, interviews, questionnaires, led and directed the interface design.
           In addition, I discussed the change from the design cycles along with the developers for lean and agile development.
         </p>
         <article id="article">
@@ -92,16 +92,14 @@
           <figcaption><i>Figure 3. Low fidelity wireframe v1</i></figcaption>
           </blockquote>
           <blockquote>
-          <div style="text-align: center;">
+          <div class="image-container">
             <img src="img/nerweb_v2.png" width="942" height="697">
           </div>
           <figcaption><i>Figure 4. Low fidelity wireframe v2</i></figcaption>
           </blockquote>
       <h3>High fidelity prototype</h3>
       <p>
-          Due to time and resource limitations, the initial study was only done 6 months into the project.
-          The project had to work with the software development team in parallel leaving no time to be wasted.
-          Therefore, the team evaluated the sketches, and the initial proof of concept level of software was implemented to be tested with the expert users.
+          The team evaluated the sketches, and the initial proof of concept level of software was implemented to be tested with the expert users.
           Then, the first high-fidelity prototype was created.
       </p>
       <blockquote>
@@ -114,7 +112,7 @@
           To communicate with the stakeholders, a user journey of the desired system was also presented.
       </p>
       <blockquote>
-        <div style="text-align: center;">
+        <div class="image-container">
           <img src="img/nerweb_userjourney.png" width="1826" height="621">
         </div>
         <figcaption><i>Figure 6. User journey</i></figcaption>
@@ -134,8 +132,7 @@
           User tasks were split into three high-level topics. 1) Sign up & sign in, 2) Create a project, and 3) Perform the evaluation using the system.
           At each page transition, participants were asked to describe their expected system behaviour and what they would do with the presented interface.
           The qualitative data was collected using video and audio and then analyzed using <a href="https://condens.io/">Condens.io</a> for open coding <a href="https://en.wikipedia.org/wiki/Thematic_analysis">Thematic analysis</a>.
-          A set of design recommendations was generated from the results.
-  
+          A set of design recommendations was generated from the results.  
       </p>
         <blockquote>
           <div style="text-align: center;">
@@ -152,9 +149,20 @@
           
   </article>
       <article id="article">
-        <h2>4. Design recommendations, second iteration of the user research, and after...</h2>
+        <h2>4. Research Insights: design recommendations, second iteration of the user research, and after...</h2>
         <p>
-          These design recommendations were presented and discussed with the software development team, followed by an interface update on the tool.
+          <ul>
+            <li>Interface should integrate a video player for users while providing concurrent controls and displays.</li>
+            <li>The video player should also have keyboard control, which has important accessibility implications.</li>
+            <li>Interface should provide a single pair-wise control for the caption and verbatim sections to move together.</li>
+            <li>Interface should provide functionalities for the idea unit edition.</li>
+            <li>Interface should be flexible and intuitive to indicate and control the editable entries against non-editable entries for idea unit definition.</li>
+            <li>Interface should provide users access to the official NER guidelines and decision tree.</li>
+          </ul>
+        </p>
+        <p>
+          These design recommendations were presented and discussed with the software development team.
+          Each recommendation was implemented to update on the tool interface.          
           Upon implementation, a <mark>second round of user study was performed with the same five expert users.</mark>
           The second study was designed in the following order:
           <ol>
