@@ -161,18 +161,22 @@ footer {
     display: block;
 }
 
-
 .image-container {
     overflow: hidden;
     text-align: center;
+    position: relative;
+    width: 100%; /* Set a specific width and height if needed */
+    height: 100%;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease;
+    transform-origin: center center;
+    cursor: move; /* Change the cursor to indicate it's draggable */
 }
 
-.image-container img:hover {
+.image-container img.zoomed {
     transform: scale(1.5); /* Adjust the scale value as needed */
 }

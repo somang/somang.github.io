@@ -202,5 +202,39 @@
             The detailed report is being prepared to be submitted to a peer-reviewed journal.
           </small>
     </article>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.image-container');
+    const image = container.querySelector('img');
+
+    let isZoomed = false;
+    let startX, startY, initialX, initialY;
+
+    image.addEventListener('mouseover', () => {
+        image.classList.add('zoomed');
+        isZoomed = true;
+    });
+
+    image.addEventListener('mouseout', () => {
+        image.classList.remove('zoomed');
+        image.style.transform = 'translate(0, 0) scale(1)';
+        isZoomed = false;
+    });
+
+    container.addEventListener('mousemove', (e) => {
+        if (isZoomed) {
+            const rect = container.getBoundingClientRect();
+            const offsetX = e.clientX - rect.left;
+            const offsetY = e.clientY - rect.top;
+
+            const moveX = (offsetX / rect.width) * 100 - 50;
+            const moveY = (offsetY / rect.height) * 100 - 50;
+
+            image.style.transform = `translate(${moveX}%, ${moveY}%) scale(1.5)`;
+        }
+    });
+});
+
+    </script>
   </body>
 </html>
