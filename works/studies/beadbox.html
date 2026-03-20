@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-us" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Somang Nam, 2016</title>    
+    <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="container">
+    <nav>
+      <ul>
+        <li><strong>Somang Nam</strong></li>
+      </ul>
+      <ul>
+        <li>              
+          <a href="/" id="home">Home</a>
+        </li>
+        <li>
+          <details class="dropdown">
+            <summary>
+              Check out my other works
+            </summary>
+            <ul dir="rtl">
+              <li><a href="/works/studies/nerweb_2024.html" target="_blank"  rel="noopener noreferrer">2024, UXR, NERWEB</a></li>
+              <li><a href="/works/studies/sj/index.html" target="_blank"  rel="noopener noreferrer">2017, Game UXR, SpaceJam</a></li>
+              <li><a href="/works/studies/beadbox_2016.html" target="_blank"  rel="noopener noreferrer">2016, Authoring Tool, Beadbox</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+    
+    <article id="main-article" style="max-width: 950px; margin: 0 auto;">
+        <h1>2016, Design and Evaluation of an Authoring Tool and Notation System for Vibrotactile Composition</h1>
+        <p>
+          Vibrotactile stimulation can be used as a substitute for audio or visual stimulation for people who are deaf or blind. 
+          Artists have become interested in creating vibrotactile art as a new and exciting art form. 
+          In order to do this, new tools and a notation must be developed and evaluated that support the creation and experience of vibration on the skin. 
+          The Beadbox tool, along with a supporting notation system, was developed for the purpose of composing vibrotactile art.
+        </p>
+
+        <article>
+          <h2>1. System Overview of the Beadbox</h2>
+          <p>
+            The purpose of the Beadbox is to facilitate the creation of vibrotactile interactive art by controlling four essential variables: 
+            (1) frequency, (2) intensity, (3) spatial distribution of the signal among the vibrotactile actuators and (4) temporal information. 
+            The Beadbox proposes a unique notation system in order to allow users to control these variables and produce these patterns. 
+            Users can record a vibrotactile composition, play the piece while they are creating, edit the file, and save the finished piece.
+          </p>
+          <p>
+            Each Bead can be created from the Bead Palette and adjusted with a corresponding frequency and intensity slider. 
+            The created Bead can be placed on the BeadPlayer timeline. 
+            Each track of the BeadPlayer represents an output contactor, with specific colour hue.
+          </p>
+          
+          <blockquote>
+            <div style="text-align: center;">
+              <img src="img/beadbox_overview.png" alt="Beadbox Interface Overview">
+            </div>
+            <figcaption><i>Figure 1. An overview of the Beadbox displaying the Timeline, Bead Player, Overview Panel, and Bead Palette.</i></figcaption>
+          </blockquote>
+        </article>
+
+        <article>
+          <h2>2. Vibrotactile Notation</h2>
+          <p>
+            To build up a notation system, a basic information unit must be defined. 
+            The basic unit in this system is called a "Bead". 
+            A Bead is developed to deliver essential information for vibrotactile art composition. 
+            A Bead then is represented by two concentric circles where the outermost circle is described by darker, heavier line.
+          </p>
+          <p>
+            Brightness was assigned to visualize the frequency level of vibrotactile stimuli. 
+            The intensity coefficient scales linearly in the Beadbox from 0 to 100. 
+            The diameter of the inner circle of the Bead then represents amplitude whereby a smaller diameter would represent the lower intensity coefficient level. 
+            To control the timing of the note, the user can drag and drop the Bead in the desired location along the timeline.
+          </p>
+
+          <blockquote>
+            <div class="image-container">
+              <img src="img/beadbox_notation.png" alt="Beadbox Notation Examples">
+            </div>
+            <figcaption><i>Figure 2. Sample Beads metaphor (botom), and demonstrating duration changes from low to high frequency, track transitions, and intensity shifts.</i></figcaption>
+          </blockquote>
+        </article>
+
+        <article>
+          <h2>3. User Study and Methodology</h2>
+          <p>
+            A user study was carried out to evaluate the general usability of the Beadbox as a vibrotactile pattern authoring tool. 
+            Thirty people (20 female, 10 male) participated in the Beadbox user study. 
+            For the study, participants completed a pre-study questionnaire, demonstration tutorial, a main composition session using Beadbox, and a post-study questionnaire. 
+            In the main composition session, participants were asked to create a 5 to 10 second vibrotactile composition using the system. 
+            The post-questionnaire consisted of ten questions from the System Usability Scale (SUS), four questions regarding the interface and controls of each vibrotactile factor, and five open ended questions.
+          </p>
+        </article>
+
+        <article>
+          <h2>4. Results and Discussion</h2>
+          <p>
+            The main findings in the evaluation suggest that the Beadbox has a good usability with a low learning barrier, has direct functionality, and aesthetically pleasing. 
+            Responses to the three learnability questions showed that participants thought Beadbox was easy to learn. 
+            For functionality, participants also agreed that the Beadbox was easy to use and that is was not unnecessarily complex. 
+            Participants liked that they could interact with a variety of simple shapes and colours. 
+            Some participants mentioned that the circular-shaped design of a Bead and its simple layout on the Beadplayer improved learnability of the Beadbox.
+          </p>
+          
+        <article>
+          <h2>Finally</h2>
+          <footer>
+            <small>
+              This work was published in the proceedings of UAHCI 2016.
+              <ul>
+                <li>Nam, S., Fels, D. (2016). Design and Evaluation of an Authoring Tool and Notation System for Vibrotactile Composition. In: Antona, M., Stephanidis, C. (eds) Universal Access in Human-Computer Interaction. Users and Context Diversity. UAHCI 2016. Lecture Notes in Computer Science, vol 9738. Springer, Cham[cite: 25].</li>
+              </ul>
+            </small>
+          </footer>
+        </article>
+    </article>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.image-container');
+        if(container) {
+            const image = container.querySelector('img');
+
+            let isZoomed = false;
+            let startX, startY, initialX, initialY;
+
+            image.addEventListener('mouseover', () => {
+                image.classList.add('zoomed');
+                isZoomed = true;
+            });
+
+            image.addEventListener('mouseout', () => {
+                image.classList.remove('zoomed');
+                image.style.transform = 'translate(0, 0) scale(1)';
+                isZoomed = false;
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (isZoomed) {
+                    const rect = container.getBoundingClientRect();
+                    const offsetX = e.clientX - rect.left;
+                    const offsetY = e.clientY - rect.top;
+
+                    const moveX = (offsetX / rect.width) * 100 - 50;
+                    const moveY = (offsetY / rect.height) * 100 - 50;
+
+                    image.style.transform = `translate(${moveX}%, ${moveY}%) scale(1.5)`;
+                }
+            });
+        }
+      });
+    </script>
+  </body>
+</html>

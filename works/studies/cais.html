@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us" data-theme="light">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Somang Nam, 2023</title>    
+    <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">    
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="container">
+    <nav>
+      <ul>
+        <li><strong>Somang Nam</strong></li>
+      </ul>
+      <ul>
+        <li>              
+          <a href="/" id="home">Home</a>
+        </li>
+        <li>
+          <details class="dropdown">
+            <summary>
+              Check out my other works
+            </summary>
+            <ul dir="rtl">
+              <li><a href="/works/studies/nerweb_2024.html" target="_blank"  rel="noopener noreferrer">2024, UXR, NERWEB</a></li>
+              <li><a href="/works/studies/cais_2023.html" target="_blank"  rel="noopener noreferrer">2023, AI Assessment, CAIS</a></li>
+              <li><a href="/works/studies/sj/index.html" target="_blank"  rel="noopener noreferrer">2017, Game UXR, SpaceJam</a></li>
+              <li><a href="/works/studies/beadbox_2016.html" target="_blank"  rel="noopener noreferrer">2016, Authoring Tool, Beadbox</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </nav>
+    
+    <article id="main-article" style="max-width: 950px; margin: 0 auto;">
+        <h1>2023, Developing a closed captioning quality assessment system</h1>
+        <p>
+          Closed Captioning (CC) is a telecommunications service to display textual information equivalent to audio. 
+          Although the primary consumer group is Deaf (D) and Hard of Hearing (HOH) viewers, they are typically excluded from the quality assessment process. 
+          Including D and HOH viewers for all assessments is nearly impossible and requires enormous effort. 
+          To address this problem, an automated system called the Caption Quality Assessment Intelligent System (CAIS) was developed using machine learning algorithms to replicate human subjective evaluation.
+        </p>
+
+        <article>
+          <h2>1. System Overview of CAIS</h2>
+          <p>
+            CAIS uses a multi-label classifier trained with an active learning algorithm. 
+            The Multilayer Perceptron (MLP) structure processes four main caption error types: synchronization delay, presentation speed, number of missing words, and caption paraphrasing. 
+            An Active Learning strategy using Query by Committee (QBC) was used to fine tune the system and reduce the required number of training data points from real human assessors.
+          </p>
+          
+          <blockquote>
+            <div style="text-align: center;">
+              <img src="img/cais_system.webp" alt="CAIS Prediction and Inquiry Flow">
+            </div>
+            <figcaption><i>Figure 1. The system diagram of CAIS outlining the prediction flow and the active learning inquiry flow.</i></figcaption>
+          </blockquote>
+        </article>
+
+        <article>
+          <h2>2. User Study and Methodology</h2>
+          <p>
+            An online user study was conducted with 15 Deaf and 15 Hard of Hearing participants who watched 20 video clips encoded with various caption errors. 
+            Participants indicated whether they agreed or disagreed with CAIS predicted quality ratings. 
+            When a participant agreed with the predicted rating, CAIS would learn the rating because it was confirmed by participants. 
+            In the case of disagreement, the participant was invited to provide CAIS with a new rating by clicking on a new quality label.
+          </p>
+
+          <blockquote>
+            <div class="image-container">
+              <img src="img/cais_interface.webp" alt="User study web application interface">
+            </div>
+            <figcaption><i>Figure 2. A screenshot of the user study web application displaying the video and the predicted ratings.</i></figcaption>
+          </blockquote>
+        </article>
+
+        <article>
+          <h2>3. Results and Findings</h2>
+          <p>
+            The results revealed a positive rate of change in the percent agreement over time, showing that CAIS successfully learned from the viewers. 
+            Overall, participants had positive attitudes toward the machine predictions, particularly for the delay and speed factors.
+          </p>
+          <ul>
+            <li>Participants mentioned how CAIS was capable of predicting how they perceived the quality of captions for the study clips.</li>
+            <li>CAIS and participant input ratings had a consensus that when there was less delay, there was greater satisfaction.</li>
+            <li>The independent t-test for the delay quality factor percent agreement between the two groups was significantly different.</li>
+          </ul>
+
+          <blockquote>
+            <div style="text-align: center;">
+              <img src="img/cais_kernel_density_estimation.webp" alt="Kernel Density Estimation graphs">
+            </div>
+            <figcaption><i>Figure 3. A kernel density estimation graph between CAIS and human participants.</i></figcaption>
+          </blockquote>
+
+          <blockquote>
+            <div style="text-align: center;">
+              <img src="img/cais_poa.webp" alt="Percent agreement trendline">
+            </div>
+            <figcaption><i>Figure 4. A linear trendline and scatter plots for the percentage of agreement between CAIS and human participants.</i></figcaption>
+          </blockquote>
+        </article>
+
+        <article>
+          <h2>Finally</h2>
+          <footer>
+            <small>
+              This work was published in Applied Intelligence in 2023.
+              <ul>
+                <li>Nam, S., Fels, D., Chignell, M. (2023). Developing a closed captioning quality assessment system using a multi-label classifier with active learning from deaf and hard of hearing viewers[cite: 292, 293, 294]. Applied Intelligence, 53, 22882 to 22897[cite: 290].</li>
+              </ul>
+            </small>
+          </footer>
+        </article>
+    </article>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const container = document.querySelector('.image-container');
+        if(container) {
+            const image = container.querySelector('img');
+
+            let isZoomed = false;
+            let startX, startY, initialX, initialY;
+
+            image.addEventListener('mouseover', () => {
+                image.classList.add('zoomed');
+                isZoomed = true;
+            });
+
+            image.addEventListener('mouseout', () => {
+                image.classList.remove('zoomed');
+                image.style.transform = 'translate(0, 0) scale(1)';
+                isZoomed = false;
+            });
+
+            container.addEventListener('mousemove', (e) => {
+                if (isZoomed) {
+                    const rect = container.getBoundingClientRect();
+                    const offsetX = e.clientX - rect.left;
+                    const offsetY = e.clientY - rect.top;
+
+                    const moveX = (offsetX / rect.width) * 100 - 50;
+                    const moveY = (offsetY / rect.height) * 100 - 50;
+
+                    image.style.transform = `translate(${moveX}%, ${moveY}%) scale(1.5)`;
+                }
+            });
+        }
+      });
+    </script>
+  </body>
+</html>

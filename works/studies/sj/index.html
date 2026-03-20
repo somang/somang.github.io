@@ -5,10 +5,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Somang Nam, 2017</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-    
     <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="container">
     <nav>
@@ -17,7 +16,7 @@
       </ul>
       <ul>
         <li>              
-          <a href="/" id="home">Take me back home</a>
+          <a href="/" id="home">Home</a>
         </li>
         <li>
           <details class="dropdown">
@@ -27,13 +26,12 @@
             <ul dir="rtl">
               <li><a href="/works/studies/nerweb_2024.html" target="_blank"  rel="noopener noreferrer">2024, UXR, NERWEB</a></li>
               <li><a href="/works/studies/sj/index.html" target="_blank"  rel="noopener noreferrer">2017, Game UXR, SpaceJam</a></li>
-
             </ul>
           </details>
         </li>
       </ul>
     </nav>
-    <article id="article" style="max-width: 950px; margin: 0 auto;">
+    <article id="main-article" style="max-width: 950px; margin: 0 auto;">
       <article>
         <h1>2017, Educational game for kids</h1>
         <p>
@@ -85,20 +83,25 @@
           </p>
           <p>The game will be presented in 2D platform and its graphical aesthetics will follow the cartoonish style of design. In order to provide players with fun, playful, and entertaining experience while playing the game, we choose to go with cartoonish style and colorful palettes to design Space Jam. This style of design will be appropriate for our target audience as well. The vivid sound effects and vibrant music will be added to complement the general atmosphere, such that enhancing player's overall experience as a result.</p>
           
-          <div style="text-align: center;">
-              <img src="sj_sketch.jpg">
-          </div>
-          <div class="overflow-auto">
-            <table>
-              <tr>
-                <td><div style="text-align: center;"><img src="flow1.png"></div></td>
-                <td><div style="text-align: center;"><img src="flow2.png"></div></td>
-                <td><div style="text-align: center;"><img src="flow3.png"></div></td>
-              </tr>
-            </table>
-          </div>
-        </article>
+          <blockquote>
+            <div style="text-align: center;">
+                <img src="sj_sketch.jpg">
+            </div>
+          </blockquote>
+          
+          <blockquote>
+            <div class="overflow-auto">
+              <table>
+                <tr>
+                  <td><div style="text-align: center;"><img src="flow1.png"></div></td>
+                  <td><div style="text-align: center;"><img src="flow2.png"></div></td>
+                  <td><div style="text-align: center;"><img src="flow3.png"></div></td>
+                </tr>
+              </table>
+            </div>
+          </blockquote>
         </details>
+      </article>
 
       <article>
         <div id="unity-container" style="width:800; height:500">
@@ -149,9 +152,13 @@
           The result concluded that there were no significant differences found in the improvement after their 
           learning through two media (p > .05, df=8).
         </p>
-        <div style="text-align: center;">
-          <img src="barcharts.png">
-        </div>        
+        
+        <blockquote>
+          <div style="text-align: center;">
+            <img src="barcharts.png">
+          </div>        
+        </blockquote>
+        
         <p>
         The overall goal of the study was to measure the effectiveness of SpaceJam as an educational game to improve knowledge 
          about astronaut health challenges during space travel. The pretest and posttest data were collected to measure the 
@@ -200,6 +207,7 @@
         </small>
       </footer>
     </article>
+    </article>
     <script>
 
       var container = document.querySelector("#unity-container");
@@ -209,12 +217,6 @@
       var fullscreenButton = document.querySelector("#unity-fullscreen-button");
       var warningBanner = document.querySelector("#unity-warning");
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
       function unityShowBanner(msg, type) {
         function updateBannerVisibility() {
           warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
@@ -246,16 +248,7 @@
         showBanner: unityShowBanner,
       };
 
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
-
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
-
         var meta = document.createElement('meta');
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
@@ -263,16 +256,7 @@
         container.className = "unity-mobile";
         canvas.className = "unity-mobile";
 
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
-
-
       } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-
-        //canvas.style.width = "960px";
-        //canvas.style.height = "600px";
         canvas.style.width = "100%";
         canvas.style.height = "100%";
       }

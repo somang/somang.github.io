@@ -6,7 +6,7 @@
     <title>Somang Nam, 2024</title>    
     <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">    
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body class="container">
     <nav>
@@ -25,15 +25,13 @@
             <ul dir="rtl">
               <li><a href="/works/studies/nerweb_2024.html" target="_blank"  rel="noopener noreferrer">2024, UXR, NERWEB</a></li>
               <li><a href="/works/studies/sj/index.html" target="_blank"  rel="noopener noreferrer">2017, Game UXR, SpaceJam</a></li>
-
             </ul>
           </details>
         </li>
       </ul>
     </nav>
     
-    
-    <article id="article" style="max-width: 950px; margin: 0 auto;">
+    <article id="main-article" style="max-width: 950px; margin: 0 auto;">
         <h1>2024, Designing a user interface for caption quality evaluation tool</h1>
         <p>
           The Canadian Radio-television and Telecommunications Commission (CRTC) regulates the quality of Closed Captioning (<a href="https://crtc.gc.ca/eng/info_sht/b321.htm">link</a>), 
@@ -51,7 +49,7 @@
           As a <mark>Product Manager / Lead Researcher </mark>, I designed the UX research, interviews, questionnaires, led and directed the interface design.
           In addition, I discussed the change from the design cycles along with the developers for lean and agile development.
         </p>
-        <article id="article">
+        <article>
           <h2>1. Requirement gathering</h2>
           <p>
             From the initial stage, two objectives were focused on to develop a dedicated user interface.
@@ -67,18 +65,17 @@
           <blockquote>
               <div style="text-align: center;">
                 <img src="img/nerold_1.png">
-                </div>
+              </div>
             <figcaption><i>Figure 1. Old interface using VBA. It does not have intuitive controls and cluttered elements as the software is not dedicated to the task.</i></figcaption>
           </blockquote>
           <blockquote>
-
             <div style="text-align: center;">
             <img src="img/nerweb1.png" width="1588" height="762">
             </div>
             <figcaption><i>Figure 2. User requirements made in FigJam. Note that the diagram is not in the traditional format as it was to communicate with the software developers.</i></figcaption>
           </blockquote>
         </article>
-        <article id="article">
+        <article>
           <h2>2. Prototyping with the baseline knowledge, and expert interviews</h2>
           <p>
             Initially, the Canadian NER model quality assessment procedure was studied to see how error severity was determined and 
@@ -120,7 +117,7 @@
       </blockquote>
       
       </article>
-      <article id="article">
+      <article>
       <h2>3. First user study</h2>
       <p>
           The first user study was planned to test the interface and system's usability and to learn deeper into the experts' workflow and desires.
@@ -142,14 +139,14 @@
           <figcaption><i>Figure 7. Coded qualitative data</i></figcaption>
         </blockquote>
         <blockquote>
-          <div style="text-align: center;"></div>
+          <div style="text-align: center;">
             <img src="img/codes_1.png" width="933" height="691">
           </div>
           <figcaption><i>Figure 8. Codes found from interview data</i></figcaption>
         </blockquote>
           
   </article>
-      <article id="article">
+      <article>
         <h2>4. Research Insights: design recommendations, second iteration of the user research, and after...</h2>
         <p>
           <ul>
@@ -190,7 +187,7 @@
           <figcaption><i>Figure 10. Final report screen with CAIS prediction scores</i></figcaption>
         </blockquote>
     </article>
-    <article id="article">
+    <article>
       <h2>Finally</h2>
           <small>
             The first part of this work was described in detail for the academic publication manuscript.
@@ -202,39 +199,41 @@
             The detailed report is being prepared to be submitted to a peer-reviewed journal.
           </small>
     </article>
+    </article>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.image-container');
-    const image = container.querySelector('img');
+        const container = document.querySelector('.image-container');
+        if(container) {
+            const image = container.querySelector('img');
 
-    let isZoomed = false;
-    let startX, startY, initialX, initialY;
+            let isZoomed = false;
+            let startX, startY, initialX, initialY;
 
-    image.addEventListener('mouseover', () => {
-        image.classList.add('zoomed');
-        isZoomed = true;
-    });
+            image.addEventListener('mouseover', () => {
+                image.classList.add('zoomed');
+                isZoomed = true;
+            });
 
-    image.addEventListener('mouseout', () => {
-        image.classList.remove('zoomed');
-        image.style.transform = 'translate(0, 0) scale(1)';
-        isZoomed = false;
-    });
+            image.addEventListener('mouseout', () => {
+                image.classList.remove('zoomed');
+                image.style.transform = 'translate(0, 0) scale(1)';
+                isZoomed = false;
+            });
 
-    container.addEventListener('mousemove', (e) => {
-        if (isZoomed) {
-            const rect = container.getBoundingClientRect();
-            const offsetX = e.clientX - rect.left;
-            const offsetY = e.clientY - rect.top;
+            container.addEventListener('mousemove', (e) => {
+                if (isZoomed) {
+                    const rect = container.getBoundingClientRect();
+                    const offsetX = e.clientX - rect.left;
+                    const offsetY = e.clientY - rect.top;
 
-            const moveX = (offsetX / rect.width) * 100 - 50;
-            const moveY = (offsetY / rect.height) * 100 - 50;
+                    const moveX = (offsetX / rect.width) * 100 - 50;
+                    const moveY = (offsetY / rect.height) * 100 - 50;
 
-            image.style.transform = `translate(${moveX}%, ${moveY}%) scale(1.5)`;
+                    image.style.transform = `translate(${moveX}%, ${moveY}%) scale(1.5)`;
+                }
+            });
         }
-    });
-});
-
+      });
     </script>
   </body>
 </html>
