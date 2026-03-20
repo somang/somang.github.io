@@ -3,40 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Stone Skipping Design Document</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background-color: #fafafa;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1, h2, h3 {
+            color: #111111;
+            font-weight: 600;
+        }
+        h1 {
+            font-size: 2.5rem;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.75rem;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            font-size: 1.25rem;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: #444444;
+        }
+        p, ul {
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin: 20px 0;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <h1>Stone Skipping Design Document</h1>
-    <img src="img/image3.gif">
+    <img src="img/image3.gif" alt="Stone Skipping concept">
+    
     <h2>Overview</h2>
+    
     <h3>Concept</h3>
     <p>The concept is an open world game for meditation and mental well being. Users can sit to enjoy nature and pick up a stone to skip on the water.</p>
 
     <h3>Target Audience and Platform</h3>
-    <p>The audience is anyone wanting to enjoy nature and calming scenery with a small activity.
-        The idea avoids competition and focuses on throwing rocks on the water[cite: 1025]. The platform utilizes head mounted devices and virtual reality.</p>
+    <p>The audience is anyone wanting to enjoy nature and calming scenery with a small activity. The idea avoids competition and focuses on throwing rocks on the water. The platform utilizes head mounted devices and virtual reality.</p>
 
     <h3>Gameplay</h3>
-    <p>The objective lets users enjoy 3D scenery of a forest lake with calming sound effects and music.
-        Users can throw stones on the lake, and a higher bounce count results in a higher score.
-        The game is open ended with a minimal user interface to promote immersion.</p>
+    <p>The objective lets users enjoy 3D scenery of a forest lake with calming sound effects and music. Users can throw stones on the lake, and a higher bounce count results in a higher score. The game is open ended with a minimal user interface to promote immersion.</p>
 
     <h3>Mechanics</h3>
-    <p>Users walk around to enjoy the music and scenery.
-        Stones instantiate every 5 seconds for users to pick up and throw into the river.</p>
-    <img src="img/image8.gif">
+    <p>Users walk around to enjoy the music and scenery. Stones instantiate every 5 seconds for users to pick up and throw into the river.</p>
+    <img src="img/image8.gif" alt="Gameplay mechanics">
+    
     <ul>
         <li>Rules: Stones can be thrown in the river to bounce, adding to the score.</li>
         <li>Physics: The physics of the stone bouncing off the water was created.</li>
     </ul>
 
     <h2>Elements</h2>
+    
     <h3>Locations</h3>
     <p>The setting is a simple beach area with forest or park scenery.</p>
 
     <h3>Level Design</h3>
     <p>The scenery uses low poly nature assets replicating a Scandinavian aesthetic.</p>
-    <img src="img/image7.png">
-    <img src="img/image10.png">
+    <img src="img/image7.png" alt="Level design view 1">
+    <img src="img/image10.png" alt="Level design view 2">
+    
     <h3>Assets</h3>
     <ul>
         <li>Music: Forest Sounds 2023 Lite by SITIAN</li>
@@ -46,32 +93,24 @@
     </ul>
 
     <h2>Development Log</h2>
+    
     <h3>Day 1</h3>
-    <p>A beach was created using simple 3D shapes and a downloaded water material.
-        Multiple free asset packages were tested because some rendered as pink trees and stones.
-        Suitable ambient sounds including a flowing river, wind, and birds were added.</p>
-    <img src="img/image9.png">
+    <p>A beach was created using simple 3D shapes and a downloaded water material. Multiple free asset packages were tested because some rendered as pink trees and stones. Suitable ambient sounds including a flowing river, wind, and birds were added.</p>
+    <img src="img/image9.png" alt="Day 1 progress">
 
     <h3>Day 2</h3>
-    <p>The focus was on the bouncing stone mechanics.
-        An LOD Group was added to the stone model to reduce rendering load.
-        A script named Stone.cs was created to handle the bouncing off the water by checking the Water tag on collision.
-        The plan to use hand interactions was replaced with controllers due to Unity SDK setup requirements with the Oculus Pro.</p>
-    <img src="img/image1.png">
+    <p>The focus was on the bouncing stone mechanics. An LOD Group was added to the stone model to reduce rendering load. A script named Stone.cs was created to handle the bouncing off the water by checking the Water tag on collision. The plan to use hand interactions was replaced with controllers due to Unity SDK setup requirements with the Oculus Pro.</p>
+    <img src="img/image1.png" alt="Day 2 progress">
 
     <h3>Day 3</h3>
-    <p>Trees and props were added to the scene.
-        The design was shifted to replicate a clean urban view similar to Copenhagen, Denmark.
-        Harbour props were placed in the scene.</p>
+    <p>Trees and props were added to the scene. The design was shifted to replicate a clean urban view similar to Copenhagen, Denmark. Harbour props were placed in the scene.</p>
 
     <h3>Day 4</h3>
     <p>A spawner script named StoneSpawner.cs was created to instantiate stones every 1 to 5 seconds within a designated spawn area boundary.</p>
 
     <h3>Day 5</h3>
-    <p>Particle effects for the stone skipping and a bounce counter were added.
-        A TextMeshPro counter was implemented.
-        The game was playtested using the Oculus Pro to adjust weight, throw velocity, and angles.</p>
-    <img src="img/image2.png">
+    <p>Particle effects for the stone skipping and a bounce counter were added. A TextMeshPro counter was implemented. The game was playtested using the Oculus Pro to adjust weight, throw velocity, and angles.</p>
+    <img src="img/image2.png" alt="Day 5 progress">
 
     <h2>Post-mortem analysis</h2>
     <ul>
