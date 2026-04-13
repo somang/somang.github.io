@@ -1,241 +1,152 @@
 <!DOCTYPE html>
-<html lang="en-us" data-theme="light">
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Somang Nam, 2024</title>    
-    <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NERWEB - Somang Nam, 2024</title>
+    <meta name="description" content="Designing a user interface for caption quality evaluation tool">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="container">
-    <nav>
-      <ul>
-        <li><strong>Somang Nam</strong></li>
-      </ul>
-      <ul>
-        <li>              
-          <a href="/" id="home">Home</a>
-        </li>
-        <li>
-          <details class="dropdown">
-            <summary>
-              Check out my other works
-            </summary>
-            <ul dir="rtl">
-              <li><a href="/works/studies/nerweb_2024.html" target="_blank"  rel="noopener noreferrer">2024, UXR, NERWEB</a></li>                    
-              <li><a href="/works/studies/cais.html" target="_blank"  rel="noopener noreferrer">2021, UXR, Caption Quality Assessment Intelligent System</a></li>
-              <li><a href="/works/studies/sj/index.html" target="_blank"  rel="noopener noreferrer">2017, Game UXR, SpaceJam</a></li>
-              <li><a href="/works/studies/beadbox.html" target="_blank"  rel="noopener noreferrer">2016, UXR, Beadbox</a></li>              
-            </ul>
-          </details>
-        </li>
-      </ul>
-    </nav>
-    
-    <article id="main-article" style="max-width: 950px; margin: 0 auto;">
-        <h1>2024, Designing a user interface for caption quality evaluation tool</h1>
-        <p>
-          The Canadian Radio-television and Telecommunications Commission (CRTC) regulates the quality of Closed Captioning (<a href="https://crtc.gc.ca/eng/info_sht/b321.htm">link</a>), 
-          which is assessed using a specific model. 
-          Expert users faced significant barriers and inefficiencies due to the lack of dedicated software and interface for evaluating televised captions.
-          To address this problem, a software tool was designed and developed from scratch using User-Centered Design principles.
-          This project involved two cycles of user research, including the System Usability Scale (<a href="https://en.wikipedia.org/wiki/System_usability_scale">SUS</a>) and user studies, 
-          which informed the initial user interface design and an Alpha prototype.
-          The tool enables certified evaluators to compare televised captions with transcripts, generating quality reports for broadcasters to audit caption quality.
-        </p>
-        <p>
-          <b>Duration:</b> 11 months
-        </p>
-        <p>
-          As a <mark>Product Manager / Lead Researcher </mark>, I designed the UX research, interviews, questionnaires, led and directed the interface design.
-          In addition, I discussed the change from the design cycles along with the developers for lean and agile development.
-        </p>
+</head>
+<body>
+    <div class="container">
+        <nav class="study-nav">
+            <a href="/" class="study-nav-brand">Somang Nam</a>
+            <div class="study-nav-links">
+                <a href="/">Home</a>
+                <div class="dropdown">
+                    <button class="dropdown-toggle">Other works</button>
+                    <div class="dropdown-menu">
+                        <a href="/works/studies/nerweb_2024.html">2024, UXR, NERWEB</a>
+                        <a href="/works/studies/cais.html">2021, UXR, Caption Quality Assessment</a>
+                        <a href="/works/studies/sj/index.html">2017, Game UXR, SpaceJam</a>
+                        <a href="/works/studies/beadbox.html">2016, UXR, Beadbox</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="study-header">
+            <p class="study-meta">2024</p>
+            <h1>Designing a user interface for caption quality evaluation tool</h1>
+            <p>The Canadian Radio-television and Telecommunications Commission (CRTC) regulates the quality of Closed Captioning (<a href="https://crtc.gc.ca/eng/info_sht/b321.htm">link</a>), which is assessed using a specific model. Expert users faced significant barriers and inefficiencies due to the lack of dedicated software and interface for evaluating televised captions. To address this problem, a software tool was designed and developed from scratch using User-Centered Design principles.</p>
+            <p>This project involved two cycles of user research, including the System Usability Scale (<a href="https://en.wikipedia.org/wiki/System_usability_scale">SUS</a>) and user studies, which informed the initial user interface design and an Alpha prototype. The tool enables certified evaluators to compare televised captions with transcripts, generating quality reports for broadcasters to audit caption quality.</p>
+            <p class="study-meta">Duration: 11 months</p>
+            <span class="study-role">Product Manager / Lead Researcher</span>
+        </header>
+
         <article>
-          <h2>1. Requirement gathering</h2>
-          <p>
-            From the initial stage, two objectives were focused on to develop a dedicated user interface.
+            <h2>1. Requirement gathering</h2>
+            <p>From the initial stage, two objectives were focused on to develop a dedicated user interface:</p>
             <ol>
                 <li>Task requirements</li>
                 <li>Need, Want, and Wish lists (Desired workflow)</li>
             </ol>
-          Starting from the baseline knowledge, the fact that the <a href="https://nercanada.ca/">Canadian NER model</a> process was studied to learn the required tasks.
-          Two domain experts were interviewed and generated a list of pain points from the current tools and processes.
-          In addition, it was possible to acquire the existing tool that users were using. With these, an initial requirements list was created.
-          </p>
-          
-          <blockquote>
-              <div style="text-align: center;">
-                <img src="img/nerold_1.png">
-              </div>
-            <figcaption><i>Figure 1. Old interface using VBA. It does not have intuitive controls and cluttered elements as the software is not dedicated to the task.</i></figcaption>
-          </blockquote>
-          <blockquote>
-            <div style="text-align: center;">
-            <img src="img/nerweb1.png" width="1588" height="762">
+            <p>Starting from the baseline knowledge, the fact that the <a href="https://nercanada.ca/">Canadian NER model</a> process was studied to learn the required tasks. Two domain experts were interviewed and generated a list of pain points from the current tools and processes. In addition, it was possible to acquire the existing tool that users were using. With these, an initial requirements list was created.</p>
+            
+            <div class="figure">
+                <img src="img/nerold_1.png" alt="Old interface using VBA">
+                <p class="figure-caption">Figure 1. Old interface using VBA. It does not have intuitive controls and cluttered elements as the software is not dedicated to the task.</p>
             </div>
-            <figcaption><i>Figure 2. User requirements made in FigJam. Note that the diagram is not in the traditional format as it was to communicate with the software developers.</i></figcaption>
-          </blockquote>
+            
+            <div class="figure">
+                <img src="img/nerweb1.png" alt="User requirements made in FigJam">
+                <p class="figure-caption">Figure 2. User requirements made in FigJam. Note that the diagram is not in the traditional format as it was to communicate with the software developers.</p>
+            </div>
         </article>
+
         <article>
-          <h2>2. Prototyping with the baseline knowledge, and expert interviews</h2>
-          <p>
-            Initially, the Canadian NER model quality assessment procedure was studied to see how error severity was determined and 
-            how each error types were defined. The certified NER evaluators were recruited from <a href="https://nercanada.ca/">NER Canada</a>.
-            The requirement lists and benchmarking of some other existing tools for other purposes were taken as design references.        
-            This allowed us to go through the initial low-fidelity prototype and potential user journey.
-          </p>
-          <blockquote>
-          <div style="text-align: center;">
-            <img src="img/nerweb_v1.png" width="1171" height="859">
-          </div>
-          <figcaption><i>Figure 3. Low fidelity wireframe v1</i></figcaption>
-          </blockquote>
-          <blockquote>
-          <div class="image-container">
-            <img src="img/nerweb_v2.png" width="942" height="697">
-          </div>
-          <figcaption><i>Figure 4. Low fidelity wireframe v2</i></figcaption>
-          </blockquote>
-      <h3>High fidelity prototype</h3>
-      <p>
-          The team evaluated the sketches, and the initial proof of concept level of software was implemented to be tested with the expert users.
-          Then, the first high-fidelity prototype was created.
-      </p>
-      <blockquote>
-        <div style="text-align: center;">
-          <img src="img/nerweb_v3.png" width="850" height="624">
-        </div>
-        <figcaption><i>Figure 5. High fidelity prototype</i></figcaption>
-      </blockquote>
-      <p>
-          To communicate with the stakeholders, a user journey of the desired system was also presented.
-      </p>
-      <blockquote>
-        <div class="image-container">
-          <img src="img/nerweb_userjourney.png" width="1826" height="621">
-        </div>
-        <figcaption><i>Figure 6. User journey</i></figcaption>
-      </blockquote>
-      
-      </article>
-      <article>
-      <h2>3. First user study</h2>
-      <p>
-          The first user study was planned to test the interface and system's usability and to learn deeper into the experts' workflow and desires.
-          Therefore, the study was designed in the following order:
-          <ol>
-              <li>Demographic questionnaire</li>
-              <li>System Usability Scale on the current interface</li>
-              <li>User tasks (think aloud protocol) with semi-structured interview questions</li>            
-          </ol>
-          User tasks were split into three high-level topics. 1) Sign up & sign in, 2) Create a project, and 3) Perform the evaluation using the system.
-          At each page transition, participants were asked to describe their expected system behaviour and what they would do with the presented interface.
-          The qualitative data was collected using video and audio and then analyzed using <a href="https://condens.io/">Condens.io</a> for open coding <a href="https://en.wikipedia.org/wiki/Thematic_analysis">Thematic analysis</a>.
-          A set of design recommendations was generated from the results.  
-      </p>
-        <blockquote>
-          <div style="text-align: center;">
-            <img src="img/code_2.png" width="526" height="855">
-          </div>
-          <figcaption><i>Figure 7. Coded qualitative data</i></figcaption>
-        </blockquote>
-        <blockquote>
-          <div style="text-align: center;">
-            <img src="img/codes_1.png" width="933" height="691">
-          </div>
-          <figcaption><i>Figure 8. Codes found from interview data</i></figcaption>
-        </blockquote>
-          
-  </article>
-      <article>
-        <h2>4. Research Insights: design recommendations, second iteration of the user research, and after...</h2>
-        <p>
-          <ul>
-            <li>Interface should integrate a video player for users while providing concurrent controls and displays.</li>
-            <li>The video player should also have keyboard control, which has important accessibility implications.</li>
-            <li>Interface should provide a single pair-wise control for the caption and verbatim sections to move together.</li>
-            <li>Interface should provide functionalities for the idea unit edition.</li>
-            <li>Interface should be flexible and intuitive to indicate and control the editable entries against non-editable entries for idea unit definition.</li>
-            <li>Interface should provide users access to the official NER guidelines and decision tree.</li>
-          </ul>
-        </p>
-        <p>
-          These design recommendations were presented and discussed with the software development team.
-          Each recommendation was implemented to update on the tool interface.          
-          Upon implementation, a <mark>second round of user study was performed with the same five expert users.</mark>
-          The second study was designed in the following order:
-          <ol>
-              <li>User tasks (think aloud protocol) with semi-structured interview questions</li>
-              <li>System Usability Scale on the NERWEB interface</li>            
-          </ol>
-          The final version specifically asked about the user experience in seeing AI-generated quality assessment to be used as a decision support tool in quality assessment.
-          The user reaction towards the AI system was positive, highlighted in their reaction to how it was presented at the end of their evaluation.
-        </p>
-        <p>
-        The SUS score comparison showed improved usability from the conventional interface to the new interface, which was already proven by participants' reactions in the interview.
-        A non-parametric statistical analysis for within-group comparison (<a href="https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test">Wilcoxon Signed-rank test</a>) was performed to compare the two sets of SUS scores.
-        </p>
-        <blockquote>
-          <div style="text-align: center;">
-            <img src="img/nerweb_v4.png" width="1072" height="752">
-          </div>
-          <figcaption><i>Figure 9. NERWEB final interface</i></figcaption>
-        </blockquote>
-        <blockquote>
-          <div style="text-align: center;">
-            <img src="img/nerweb_final_cais.png" width="931" height="675">
-          </div>
-          <figcaption><i>Figure 10. Final report screen with CAIS prediction scores</i></figcaption>
-        </blockquote>
-    </article>
-    <article>
-      <h2>Finally</h2>
-          <small>
-            The first part of this work was described in detail for the academic publication manuscript.
+            <h2>2. Prototyping with baseline knowledge and expert interviews</h2>
+            <p>Initially, the Canadian NER model quality assessment procedure was studied to see how error severity was determined and how each error types were defined. The certified NER evaluators were recruited from <a href="https://nercanada.ca/">NER Canada</a>. The requirement lists and benchmarking of some other existing tools for other purposes were taken as design references. This allowed us to go through the initial low-fidelity prototype and potential user journey.</p>
+            
+            <div class="figure">
+                <img src="img/nerweb_v1.png" alt="Low fidelity wireframe v1">
+                <p class="figure-caption">Figure 3. Low fidelity wireframe v1</p>
+            </div>
+            
+            <div class="figure">
+                <img src="img/nerweb_v2.png" alt="Low fidelity wireframe v2">
+                <p class="figure-caption">Figure 4. Low fidelity wireframe v2</p>
+            </div>
+
+            <h3>High fidelity prototype</h3>
+            <p>The team evaluated the sketches, and the initial proof of concept level of software was implemented to be tested with the expert users. Then, the first high-fidelity prototype was created.</p>
+            
+            <div class="figure">
+                <img src="img/nerweb_v3.png" alt="High fidelity prototype">
+                <p class="figure-caption">Figure 5. High fidelity prototype</p>
+            </div>
+            
+            <p>To communicate with the stakeholders, a user journey of the desired system was also presented.</p>
+            
+            <div class="figure">
+                <img src="img/nerweb_userjourney.png" alt="User journey">
+                <p class="figure-caption">Figure 6. User journey</p>
+            </div>
+        </article>
+
+        <article>
+            <h2>3. First user study</h2>
+            <p>The first user study was planned to test the interface and system's usability and to learn deeper into the experts' workflow and desires. Therefore, the study was designed in the following order:</p>
+            <ol>
+                <li>Demographic questionnaire</li>
+                <li>System Usability Scale on the current interface</li>
+                <li>User tasks (think aloud protocol) with semi-structured interview questions</li>
+            </ol>
+            <p>User tasks were split into three high-level topics: 1) Sign up & sign in, 2) Create a project, and 3) Perform the evaluation using the system. At each page transition, participants were asked to describe their expected system behaviour and what they would do with the presented interface.</p>
+            <p>The qualitative data was collected using video and audio and then analyzed using <a href="https://condens.io/">Condens.io</a> for open coding <a href="https://en.wikipedia.org/wiki/Thematic_analysis">Thematic analysis</a>. A set of design recommendations was generated from the results.</p>
+            
+            <div class="figure">
+                <img src="img/code_2.png" alt="Coded qualitative data">
+                <p class="figure-caption">Figure 7. Coded qualitative data</p>
+            </div>
+            
+            <div class="figure">
+                <img src="img/codes_1.png" alt="Codes found from interview data">
+                <p class="figure-caption">Figure 8. Codes found from interview data</p>
+            </div>
+        </article>
+
+        <article>
+            <h2>4. Research Insights and second iteration</h2>
+            <p>Design recommendations from the first study:</p>
             <ul>
-              <li>Nam, S., Tanvir, R., (2024). <a href="https://link.springer.com/chapter/10.1007/978-3-031-62849-8_5">
-                NERWEB: User-friendly Software for Caption Quality Assessment Using the NER Model</a>, Computers Helping People with Special Needs, 
-                ICCHP 2024, Linz, Austria, 2024, Proceedings. Springer.</li>
+                <li>Interface should integrate a video player for users while providing concurrent controls and displays.</li>
+                <li>The video player should also have keyboard control, which has important accessibility implications.</li>
+                <li>Interface should provide a single pair-wise control for the caption and verbatim sections to move together.</li>
+                <li>Interface should provide functionalities for the idea unit edition.</li>
+                <li>Interface should be flexible and intuitive to indicate and control the editable entries against non-editable entries for idea unit definition.</li>
+                <li>Interface should provide users access to the official NER guidelines and decision tree.</li>
             </ul>
-            The detailed report is being prepared to be submitted to a peer-reviewed journal.
-          </small>
-    </article>
-    </article>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const container = document.querySelector('.image-container');
-        if(container) {
-            const image = container.querySelector('img');
+            <p>These design recommendations were presented and discussed with the software development team. Each recommendation was implemented to update on the tool interface. Upon implementation, a <mark>second round of user study was performed with the same five expert users.</mark></p>
+            <p>The second study was designed in the following order:</p>
+            <ol>
+                <li>User tasks (think aloud protocol) with semi-structured interview questions</li>
+                <li>System Usability Scale on the NERWEB interface</li>
+            </ol>
+            <p>The final version specifically asked about the user experience in seeing AI-generated quality assessment to be used as a decision support tool in quality assessment. The user reaction towards the AI system was positive, highlighted in their reaction to how it was presented at the end of their evaluation.</p>
+            <p>The SUS score comparison showed improved usability from the conventional interface to the new interface, which was already proven by participants' reactions in the interview. A non-parametric statistical analysis for within-group comparison (<a href="https://en.wikipedia.org/wiki/Wilcoxon_signed-rank_test">Wilcoxon Signed-rank test</a>) was performed to compare the two sets of SUS scores.</p>
+            
+            <div class="figure">
+                <img src="img/nerweb_v4.png" alt="NERWEB final interface">
+                <p class="figure-caption">Figure 9. NERWEB final interface</p>
+            </div>
+            
+            <div class="figure">
+                <img src="img/nerweb_final_cais.png" alt="Final report screen with CAIS prediction scores">
+                <p class="figure-caption">Figure 10. Final report screen with CAIS prediction scores</p>
+            </div>
+        </article>
 
-            let isZoomed = false;
-            let startX, startY, initialX, initialY;
-
-            image.addEventListener('mouseover', () => {
-                image.classList.add('zoomed');
-                isZoomed = true;
-            });
-
-            image.addEventListener('mouseout', () => {
-                image.classList.remove('zoomed');
-                image.style.transform = 'translate(0, 0) scale(1)';
-                isZoomed = false;
-            });
-
-            container.addEventListener('mousemove', (e) => {
-                if (isZoomed) {
-                    const rect = container.getBoundingClientRect();
-                    const offsetX = e.clientX - rect.left;
-                    const offsetY = e.clientY - rect.top;
-
-                    const moveX = (offsetX / rect.width) * 100 - 50;
-                    const moveY = (offsetY / rect.height) * 100 - 50;
-
-                    image.style.transform = `translate(${moveX}%, ${moveY}%) scale(1.5)`;
-                }
-            });
-        }
-      });
-    </script>
-  </body>
+        <footer class="study-footer">
+            <small>
+                The first part of this work was described in detail for the academic publication manuscript.
+                <ul>
+                    <li>Nam, S., Tanvir, R., (2024). <a href="https://link.springer.com/chapter/10.1007/978-3-031-62849-8_5">NERWEB: User-friendly Software for Caption Quality Assessment Using the NER Model</a>, Computers Helping People with Special Needs, ICCHP 2024, Linz, Austria, 2024, Proceedings. Springer.</li>
+                </ul>
+                The detailed report is being prepared to be submitted to a peer-reviewed journal.
+            </small>
+        </footer>
+    </div>
+</body>
 </html>

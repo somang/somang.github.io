@@ -1,285 +1,251 @@
 <!DOCTYPE html>
-<html lang="en-us" data-theme="light">
-  <head>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Somang Nam, 2017</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpaceJam - Somang Nam, 2017</title>
+    <meta name="description" content="Educational game for kids about space nutrition">
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <script src="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/postcss.config.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="container">
-    <nav>
-      <ul>
-        <li><strong>Somang Nam</strong></li>
-      </ul>
-      <ul>
-        <li>              
-          <a href="/" id="home">Home</a>
-        </li>
-        <li>
-          <details class="dropdown">
-            <summary>
-              Check out my other works
-            </summary>
-            <ul dir="rtl">
-              <li><a href="/works/studies/nerweb_2024.html" target="_blank"  rel="noopener noreferrer">2024, UXR, NERWEB</a></li>
-              <li><a href="/works/studies/sj/index.html" target="_blank"  rel="noopener noreferrer">2017, Game UXR, SpaceJam</a></li>
+    <style>
+        /* Unity WebGL specific styles */
+        #unity-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        #unity-canvas {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            aspect-ratio: 16/10;
+            border: 1px solid #E1E1E1;
+            border-radius: 4px;
+        }
+        #unity-loading-bar {
+            display: none;
+        }
+        #unity-progress-bar-empty {
+            width: 100%;
+            max-width: 300px;
+            height: 4px;
+            background: #E1E1E1;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+        #unity-progress-bar-full {
+            height: 100%;
+            background: #1EAEDB;
+            border-radius: 2px;
+            width: 0%;
+        }
+        #unity-warning {
+            margin: 1rem 0;
+        }
+        #unity-footer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        #unity-fullscreen-button {
+            font-size: 12px;
+            color: #818181;
+            cursor: pointer;
+        }
+        #unity-build-title {
+            font-size: 12px;
+            color: #818181;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="study-nav">
+            <a href="/" class="study-nav-brand">Somang Nam</a>
+            <div class="study-nav-links">
+                <a href="/">Home</a>
+                <div class="dropdown">
+                    <button class="dropdown-toggle">Other works</button>
+                    <div class="dropdown-menu">
+                        <a href="/works/studies/nerweb_2024.html">2024, UXR, NERWEB</a>
+                        <a href="/works/studies/cais.html">2021, UXR, Caption Quality Assessment</a>
+                        <a href="/works/studies/sj/index.html">2017, Game UXR, SpaceJam</a>
+                        <a href="/works/studies/beadbox.html">2016, UXR, Beadbox</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <header class="study-header">
+            <p class="study-meta">2017</p>
+            <h1>Educational game for kids</h1>
+            <p>In 2017, a game design project was done to participate in the <a href="https://ingeniumcanada.org/aviation">Canada Aviation and Space Museum</a> for children's space nutrition education. The user-centred design approach was taken from the beginning of the project.</p>
+        </header>
+
+        <article>
+            <h2>Introduction</h2>
+            <p>SpaceJam is an educational game developed to spark children's interest in space travel and encourage them to learn more about the International Space Station. SpaceJam presents the journey and potential obstacles faced by a spaceship taking off from Earth to the International Space Station, with a particular focus on astronaut physical health and space flight nutrition (ref: NASA <a href="https://www.nasa.gov/directorates/esdmd/hhp/ibook-on-space-nutrition/">link1</a>, <a href="https://www.nasa.gov/history/space-station-20th-food-on-iss/">link2</a>). The game was designed for a younger demographic, as the information content that is being taught is not highly complex and will likely only be new to children aged from 10 to 14 years old.</p>
+            <p>The goal was to incorporate game features that make the game both engaging and educational for the player. Ultimately, the game should motivate the player to want to learn more about the subject. In this study, we compare the learning outcomes of playing SpaceJam and reading a text about the same subject.</p>
+            <p>The study is designed to answer the question of whether or not playing SpaceJam results in better learning outcomes than reading text media about astronauts' health during space travel. This study compares the pre-test and post-test of two groups who learned the same information using different media. Additionally, surveys and observations were collected during the study to evaluate the usability of the game and apply the required changes.</p>
+            <p><mark>The user study aimed to measure the effectiveness of SpaceJam as an educational tool.</mark></p>
+        </article>
+
+        <article>
+            <details>
+                <summary>Game Design</summary>
+                <h3>Plot</h3>
+                <p>The plot of this game will be the spaceship travelling around the solar system. While playing, the main character of the game who is the astronaut will make a journey from a starting point to an end point. The travel starting point and end point will vary based on the level that the user has reached (current status of travelling context is either between planets or earth to the ISS).</p>
+                
+                <h3>Goals</h3>
+                <p>The goal of the game mainly consists of two parts. First, engaging the user into a user-friendly environment where they would have to keep the astronaut's body condition at a healthy state as well as making sure the the spaceship does not run out of fuel. The goal of this game is to have young users intrigued about how astronauts keep their healthy body condition and the requirements for their space travel.</p>
+                
+                <h3>Interface and Graphical Aesthetics</h3>
+                <p>The game's interface will be divided into three sections. There would be status bars positioned on the top-left corner of the screen such that the user can always be informed about his or her status. The status bars consist of the fuel level of the spaceship as well as the health level of the astronaut.</p>
+                <p>The game will be presented in 2D platform and its graphical aesthetics will follow the cartoonish style of design. In order to provide players with fun, playful, and entertaining experience while playing the game, we choose to go with cartoonish style and colorful palettes to design Space Jam. This style of design will be appropriate for our target audience as well. The vivid sound effects and vibrant music will be added to complement the general atmosphere.</p>
+                
+                <div class="figure">
+                    <img src="sj_sketch.jpg" alt="SpaceJam sketch">
+                    <p class="figure-caption">Initial game sketch</p>
+                </div>
+                
+                <div class="figure">
+                    <img src="flow1.png" alt="Game flow 1">
+                </div>
+                <div class="figure">
+                    <img src="flow2.png" alt="Game flow 2">
+                </div>
+                <div class="figure">
+                    <img src="flow3.png" alt="Game flow 3">
+                </div>
+            </details>
+        </article>
+
+        <article>
+            <div id="unity-container">
+                <canvas id="unity-canvas"></canvas>
+                <div id="unity-loading-bar">
+                    <div id="unity-progress-bar-empty">
+                        <div id="unity-progress-bar-full"></div>
+                    </div>
+                </div>
+                <div id="unity-warning"></div>
+                <div id="unity-footer">
+                    <div id="unity-fullscreen-button">Fullscreen</div>
+                    <div id="unity-build-title">SpaceJam</div>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <h2>Method</h2>
+            <p>The methodology used in SpaceJam's user study workshop focused on determining whether individuals learn space nutrition knowledge better by playing SpaceJam rather than using a conventional medium (reading related text). There was a total of ten participants recruited to participate our study (5 treatment group and 5 control group). A between-group study was designed to measure the score change from either playing the game or reading related materials.</p>
+            <p>This was done by using observations, questionnaire and interviews. We observed when users were playing SpaceJam or when users were reading the related text. In addition, text and nominal and ordinal data were collected through pre and post-questionnaires. Post-study interviews were also conducted to ask about the gameplay or the article.</p>
+        </article>
+
+        <article>
+            <h2>Key findings</h2>
+            <ul>
+                <li>No significant difference found in educational impact between game and reading related materials.</li>
+                <li>However, gameplay provided users higher usability, positive user experience, and higher engagement.</li>
             </ul>
-          </details>
-        </li>
-      </ul>
-    </nav>
-    <article id="main-article" style="max-width: 950px; margin: 0 auto;">
-      <article>
-        <h1>2017, Educational game for kids</h1>
-        <p>
-          In 2017, a game design project was done to participate in the 
-          <a href="https://ingeniumcanada.org/aviation">Canada Aviation and Space Museum</a> for children's space nutrition education.
-          The user-centred design approach was taken from the beginning of the project.        
-        </p>
-      </article>
-      <article>
-        <h2>Intro</h2>
-        <p>
-          SpaceJam is an educational game developed to spark children's interest in space travel and encourage them 
-          to learn more about the International Space Station. 
-          SpaceJam presents the journey and potential obstacles faced by a spaceship 
-          taking off from Earth to the International Space Station, with a 
-          particular focus on astronaut physical health and space flight nutrition (ref: NASA <a href="https://www.nasa.gov/directorates/esdmd/hhp/ibook-on-space-nutrition/">link1</a>, <a href="https://www.nasa.gov/history/space-station-20th-food-on-iss/">link2</a>). 
-          The game was designed for a younger demographic, 
-          as the information content that is being taught is not highly complex and 
-          will likely only be new to children aged from 10 to 14 years old. 
-        </p>
-        <p>
-          The goal was to incorporate game features that make the game both engaging and educational for the player. 
-          Ultimately, the game should motivate the player to want to learn more about the subject.
-          In this study, we compare the learning outcomes of playing SpaceJam and reading a text about the same subject. 
-        </p>
-        <p>
-          The study is designed to answer the question of whether or not playing SpaceJam results in better 
-          learning outcomes than reading text media about astronauts’ health during space travel.
-          This study compares the pre-test and post-test of two groups who learned the same information using different media. 
-          Additionally, surveys and observations were collected during the study to evaluate the usability of the game and 
-          apply the required changes.
-          <mark>The user study aimed to measure the effectiveness of SpaceJam as an educational tool.</mark>
-        </p>
-      </article>
-      <article>
-        <details>
-          <summary role="button" class="outline">Game Design</summary>
-          <h3>Plot</h3>
-          <p>The plot of this game will be the spaceship travelling around the solar system.
-             While playing, the main character of the game who is the astronaut will make a journey from 
-             a starting point to an end point. The travel starting point and end point will vary based on the 
-             level that the user has reached (current status of travelling context is either between planets or earth to the ISS).</p>
-          <h3>Goals</h3>
-          <p>The goal of the game mainly consists of two parts. First, engaging the user into a user-friendly environment where they would have to keep the astronaut’s body condition at a healthy state as well as making sure the the spaceship does not run out of fuel.
-            The goal of this game is to have young users intrigued about how astronauts keep their healthy body condition and the requirements for their space travel.
-          </p>          
-          <h3>Interface & Graphical Aesthetics</h3>
-          <p>The game’s interface will be divided into three sections. There would be status bars positioned on the top-left corner of the screen such that the user can always be informed about his or her status. The status bars consist of the fuel level of the spaceship as well as the health level of the astronaut. We are currently thinking of adding a third status bar containing the astronaut’s eating-exercising status but given the fact that we might provide the user with excessive information, we will discuss and analyze based on feedback and decide on the next phase of our project how we will proceed with this feature.
-          </p>
-          <p>The game will be presented in 2D platform and its graphical aesthetics will follow the cartoonish style of design. In order to provide players with fun, playful, and entertaining experience while playing the game, we choose to go with cartoonish style and colorful palettes to design Space Jam. This style of design will be appropriate for our target audience as well. The vivid sound effects and vibrant music will be added to complement the general atmosphere, such that enhancing player's overall experience as a result.</p>
-          
-          <blockquote>
-            <div style="text-align: center;">
-                <img src="sj_sketch.jpg">
-            </div>
-          </blockquote>
-          
-          <blockquote>
-            <div class="overflow-auto">
-              <table>
-                <tr>
-                  <td><div style="text-align: center;"><img src="flow1.png"></div></td>
-                  <td><div style="text-align: center;"><img src="flow2.png"></div></td>
-                  <td><div style="text-align: center;"><img src="flow3.png"></div></td>
-                </tr>
-              </table>
-            </div>
-          </blockquote>
-        </details>
-      </article>
 
-      <article>
-        <div id="unity-container" style="width:800; height:500">
-          <canvas id="unity-canvas"></canvas>
-          <div id="unity-loading-bar">
-            <div id="unity-progress-bar-empty">
-              <div id="unity-progress-bar-full"></div>
+            <h2>Results and findings</h2>
+            <p>Regarding the improvement of average score, the control group showed a lower average performance in the pre-test and scored a slightly higher improvement of average score (mean: 5.4, SD:3.21) than the treatment group (mean:5.2, SD:1.79). An unpaired t-test was performed to find the differences between the two groups. The result concluded that there were no significant differences found in the improvement after their learning through two media (p > .05, df=8).</p>
+            
+            <div class="figure">
+                <img src="barcharts.png" alt="Bar charts showing results">
+                <p class="figure-caption">Pre-test and post-test score comparison between groups</p>
             </div>
-          </div>
-          <div id="unity-warning"> </div>
-          <div id="unity-footer">
-            <div id="unity-fullscreen-button"></div>
-            <div id="unity-build-title">SpaceJam</div>
-          </div>
-        </div>
-      </article>
+            
+            <p>The overall goal of the study was to measure the effectiveness of SpaceJam as an educational game to improve knowledge about astronaut health challenges during space travel. The pretest and posttest data were collected to measure the learning outcomes of SpaceJam compared to a conventional learning method. On the other hand, survey and observation data were collected to test the usability of SpaceJam. Consequently, this ensures that learning outcomes are not affected by poor game design and that the different game features motivate them to learn.</p>
+        </article>
 
-      <article>        
-        <h2>Method</h2>
-        <p>
-        The methodology used in SpaceJam’s user study workshop focused on determining whether 
-          individuals learn space nutrition knowledge better by playing SpaceJam rather than 
-          using a conventional medium (reading related text).
-          There was a total of ten participants recruited to participate our study (5 treatment group and 5 control group).          
-          A between-group study was designed to measure the score change from either playing the game or reading related materials. 
-        </p>
-        <p>
-          This was done by using observations, questionnaire and interviews.
-          We observed when users were playing SpaceJam or when users were reading the related text.
-          In addition, text and nominal and ordinal data were collected through pre and post-questionnaires.
-          Post-study interviews were also conducted to ask about the gameplay or the article.
-        </p>        
-      </article>
-      <article>
-        <h2>Key findings</h2>
-        <p>
-          <ul>
-            <li>No significant difference found in educational impact between game and reading related materials.</li>
-            <li>However, gameplay provided users higher usability, positive user experience, and higher engagement.</li>
-          </ul>
-        </p>
+        <article>
+            <details>
+                <summary>Educational Outcomes</summary>
+                <p>The learning method used did not have a significant effect on the level of knowledge acquired in the post-test results. Both participants in the control group and the treatment group showed a significant improvement in knowledge about astronauts' health. The overall results showed a similar pretest to posttest gain in both groups. The control group scored a slightly higher average performance improvement (5.4) than the treatment group (5.2). The difference in performance improvement between the two groups was due to the different levels of knowledge participants had before taking the test.</p>
+                <p>Participants in the treatment group had more knowledge about the subject before taking the test, which resulted in a lower improvement compared to the control group who did not have previous knowledge about the subject. However, regardless of previous knowledge, participants from the two groups had the same results in their post-test. This shows that SpaceJam was effective in delivering the same information the text provided for the control group.</p>
+                <p>The results showed that text was easy to understand and effective in communicating information concerning astronauts' health. However, one of the interesting results from the control group was the participants did not experience any increase in knowledge after reading the text. The same participant reported that reading is a boring medium to learn, and was more interested in trying the game. Overall, participants preferred more visual representations of information such as educational games, videos, and infographics. Therefore, the unexciting nature of reading texts can have a negative effect on the learning outcomes of this medium.</p>
+                
+                <h3>Game Usability</h3>
+                <p>Overall, SpaceJam was reported by participants to be fun, engaging, and enjoyable. Participants found that the different game rules motivated them to focus on what to collect and what to avoid in order to keep the astronaut in a healthy state. All participants loved the graphics in the game and found them to be effective in communicating different health requirements for astronauts.</p>
+                <p>However, a significant number of participants reported having problems with game feedback. The lack of score or timing features to indicate the state of the game confused participants about when the game was going to end and how they were doing. Additionally, many participants did not notice the health bar on the screen, due to its location on the lower left side of the screen.</p>
+                <p>Therefore, the health bar was replaced by a bigger health bar to make sure can see it while playing. Moreover, to give players more feedback on their actions while playing, a reaction sound was added when collecting the right elements, and the spaceship turned red when collecting the wrong elements. Additionally, a score count was added to the screen for players to get feedback on their overall performance while playing, and motivate players to replay the game and break their record. With this repetition, players are more likely to recall the information learned while playing, which will increase the overall learning outcomes.</p>
+            </details>
+        </article>
 
-        <h2>Results and findings</h2>
-        <p>
-          Regarding the improvement of average score, the control group showed a lower average performance in the pre-test and 
-          scored a slightly higher improvement of average score (mean: 5.4, SD:3.21) than the treatment group (mean:5.2, SD:1.79). 
-          An unpaired t-test was performed to find the differences between the two groups. 
-          The result concluded that there were no significant differences found in the improvement after their 
-          learning through two media (p > .05, df=8).
-        </p>
-        
-        <blockquote>
-          <div style="text-align: center;">
-            <img src="barcharts.png">
-          </div>        
-        </blockquote>
-        
-        <p>
-        The overall goal of the study was to measure the effectiveness of SpaceJam as an educational game to improve knowledge 
-         about astronaut health challenges during space travel. The pretest and posttest data were collected to measure the 
-         learning outcomes of SpaceJam compared to a conventional learning method. 
-         On the other hand, survey and observation data were collected to test the usability of SpaceJam. 
-         Consequently, this ensures that learning outcomes are not affected by poor game design and that the different game 
-         features motivate them to learn.
-        </p>
-      </article>
-      <article>
-        <details>
-          <summary role="button" class="outline">Educational Outcomes</summary>
-          <p>
-            The learning method used did not have a significant effect on the level of knowledge acquired in the post-test results. 
-            Both participants in the control group and the treatment group showed a significant improvement in knowledge about astronauts’ health. 
-            The overall results showed a similar pretest to posttest gain in both groups. 
-            The control group scored a slightly higher average performance improvement (5.4) than the treatment group (5.2).
-            The difference in performance improvement between the two groups was due to the different levels of knowledge participants had before taking the test. 
-  
-            Participants in the treatment group had more knowledge about the subject before taking the test, 
-            which resulted in a lower improvement compared to the control group who did not have previous knowledge about the subject. 
-            However, regardless of previous knowledge, participants from the two groups had the same results in their post-test. 
-            This shows that SpaceJam was effective in delivering the same information the text provided for the control group.
-  
-            The results showed that text was easy to understand and effective in communicating information concerning astronauts’ health. 
-            However, one of the interesting results from the control group was the participants did not experience any increase in knowledge after reading the text.
-            The same participant reported that reading is a boring medium to learn, and was more interested in trying the game.
-            Overall, participants preferred more visual representations of information such as educational games, videos, and infographics.
-            Therefore, the unexciting nature of reading texts can have a negative effect on the learning outcomes of this medium.
-          </p>
-          <h2>Game Usability</h2>
-          <p>
-            Overall, SpaceJam was reported by participants to be fun, engaging, and enjoyable. Participants found that the different game rules motivated them to focus on what to collect and what to avoid in order to keep the astronaut in a healthy state. All participants loved the graphics in the game and found them to be effective in communicating different health requirements for astronauts.  
-            However, a significant number of participants reported having problems with game feedback. The lack of score or timing features to indicate the state of the game confused participants about when the game was going to end and how they were doing. Additionally, many participants did not notice the health bar on the screen, due to its location on the lower left side of the screen.
-            Therefore, the health bar was replaced by a bigger health bar to make sure can see it while playing. Moreover, to give players more feedback on their actions while playing, a reaction sound was added when collecting the right elements, and the spaceship turned red when collecting the wrong elements.  Additionally, a score count was added to the screen for players to get feedback on their overall performance while playing, and motivate players to replay the game and break their record. With this repetition, players are more likely to recall the information learned while playing, which will increase the overall learning outcomes.
-          </p>
-  
-        </details>
-    </article>
-    <article>
-      <h2>Finally</h2>
-      <footer>
-        <small>This work was presented at iSchool conference in 2018.
-          Our work was directed with stakeholders at the <a href="https://ingeniumcanada.org/aviation">Canada Aviation and Space Museum</a> and U of Toronto's educational game design experts.
-          While the data sample size was small, the qualitative analysis identified six themes, and all descriptive statistics were seemed to be in-line with the qualitative findings.
-        </small>
-      </footer>
-    </article>
-    </article>
+        <footer class="study-footer">
+            <small>
+                This work was presented at iSchool conference in 2018. Our work was directed with stakeholders at the <a href="https://ingeniumcanada.org/aviation">Canada Aviation and Space Museum</a> and U of Toronto's educational game design experts. While the data sample size was small, the qualitative analysis identified six themes, and all descriptive statistics were seemed to be in-line with the qualitative findings.
+            </small>
+        </footer>
+    </div>
+
     <script>
+        var container = document.querySelector("#unity-container");
+        var canvas = document.querySelector("#unity-canvas");
+        var loadingBar = document.querySelector("#unity-loading-bar");
+        var progressBarFull = document.querySelector("#unity-progress-bar-full");
+        var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+        var warningBanner = document.querySelector("#unity-warning");
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
-
-      function unityShowBanner(msg, type) {
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
+        function unityShowBanner(msg, type) {
+            function updateBannerVisibility() {
+                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+            }
+            var div = document.createElement('div');
+            div.innerHTML = msg;
+            warningBanner.appendChild(div);
+            if (type == 'error') div.style = 'background: #fee; color: #c00; padding: 8px; border-radius: 4px; font-size: 12px;';
+            else {
+                if (type == 'warning') div.style = 'background: #fff3cd; padding: 8px; border-radius: 4px; font-size: 12px;';
+                setTimeout(function() {
+                    warningBanner.removeChild(div);
+                    updateBannerVisibility();
+                }, 5000);
+            }
             updateBannerVisibility();
-          }, 5000);
         }
-        updateBannerVisibility();
-      }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/sj.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/sj.data",
-        frameworkUrl: buildUrl + "/sj.framework.js",
-        codeUrl: buildUrl + "/sj.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "SpaceJam",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/sj.loader.js";
+        var config = {
+            dataUrl: buildUrl + "/sj.data",
+            frameworkUrl: buildUrl + "/sj.framework.js",
+            codeUrl: buildUrl + "/sj.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "DefaultCompany",
+            productName: "SpaceJam",
+            productVersion: "1.0",
+            showBanner: unityShowBanner,
+        };
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            var meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+            document.getElementsByTagName('head')[0].appendChild(meta);
+        }
 
-      } else {
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-      }
+        loadingBar.style.display = "block";
 
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+            }).then((unityInstance) => {
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
-                  unityInstance.SetFullscreen(1);
+                    unityInstance.SetFullscreen(1);
                 };
-              }).catch((message) => {
+            }).catch((message) => {
                 alert(message);
-              });
-            };
+            });
+        };
 
-      document.body.appendChild(script);
-
+        document.body.appendChild(script);
     </script>
-  </body>
+</body>
 </html>
