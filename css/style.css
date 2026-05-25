@@ -207,12 +207,37 @@ footer {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
 .card-year {
     display: inline-block;
     font-size: 11px;
     color: #818181;
     letter-spacing: 0.05rem;
-    margin-bottom: 0.5rem;
+}
+
+.card-category {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+}
+
+.category-research {
+    background-color: #E8F4F8;
+    color: #1EAEDB;
+}
+
+.category-fun {
+    background-color: #FFF3E0;
+    color: #E67E22;
 }
 
 .card-title {
